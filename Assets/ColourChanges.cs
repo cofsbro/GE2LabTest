@@ -19,13 +19,14 @@ public class ColourChanges : MonoBehaviour
         colour[1] = Color.yellow;
         colour[2] = Color.green;
 
-        GameObject change = Instantiate(lightcolour);
+        
+      
 
         // get random position within array
         int index = Random.Range(0, colour.Length);
 
         // set colour to array index position
-        change.GetComponent<Renderer>().material.color = colour[index];
+        lightcolour.GetComponent<Renderer>().material.color = colour[index];
 
 
         if (colour[index] == colour[0])
@@ -77,9 +78,8 @@ public class ColourChanges : MonoBehaviour
     {
         float geenchange = Random.Range(4, 11);
         yield return new WaitForSeconds(geenchange);
-        GameObject greencol = Instantiate(lightcolour);
 
-        greencol.GetComponent<Renderer>().material.color = colour[1];
+        lightcolour.GetComponent<Renderer>().material.color = colour[1];
 
 
     }
@@ -89,10 +89,9 @@ public class ColourChanges : MonoBehaviour
     {
 
         yield return new WaitForSeconds(4f);
-        GameObject yelcol = Instantiate(lightcolour);
 
 
-        yelcol.GetComponent<Renderer>().material.color = colour[0];
+        lightcolour.GetComponent<Renderer>().material.color = colour[0];
 
     }
 
@@ -100,10 +99,9 @@ public class ColourChanges : MonoBehaviour
     {
         float redchange = Random.Range(4, 11);
         yield return new WaitForSeconds(redchange);
-        GameObject redcol = Instantiate(lightcolour);
 
 
-        redcol.GetComponent<Renderer>().material.color = colour[2];
+        lightcolour.GetComponent<Renderer>().material.color = colour[2];
 
     }
 

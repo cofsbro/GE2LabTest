@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2358380629577849100}
   - component: {fileID: 5317422571782128456}
   - component: {fileID: 201972382341421987}
-  - component: {fileID: 5768610353143386435}
+  - component: {fileID: -3511558636938332637}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: trafficlight
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &5768610353143386435
+--- !u!114 &-3511558636938332637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
