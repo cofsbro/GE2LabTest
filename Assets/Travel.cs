@@ -9,6 +9,9 @@ public class Travel : MonoBehaviour
     public Vector3 acceleration = Vector3.zero;
     public Vector3 force = Vector3.zero;
 
+
+    
+
     public float mass = 1.0f;
 
     public float maxSpeed = 5;
@@ -31,6 +34,8 @@ public class Travel : MonoBehaviour
 
     public float damping = 0.1f;
 
+
+    // chase point
     public Vector3 Pursue(Travel pursueTarget)
     {
         float dist = Vector3.Distance(pursueTarget.transform.position, transform.position);
@@ -41,33 +46,9 @@ public class Travel : MonoBehaviour
         return Seek(pursueTargetPos);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    
 
-    }
-
-    public void OnDrawGizmos()
-    {
-
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(target, 0.1f);
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + acceleration);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position + velocity);
-
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(targetTransform.position, slowingDistance);
-
-        if (pursueEnabled)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(pursueTargetPos, 0.1f);
-        }
-    }
+    
 
     Vector3 Seek(Vector3 target)
     {
@@ -110,9 +91,7 @@ public class Travel : MonoBehaviour
         {
             Vector3 tempUp = Vector3.Lerp(transform.up, Vector3.up + (acceleration * banking), Time.deltaTime * 3.0f);
             transform.LookAt(transform.position + velocity, tempUp);
-            //transform.forward = velocity;
             velocity -= (damping * velocity * Time.deltaTime);
-
 
         }
     }

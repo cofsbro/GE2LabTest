@@ -9,6 +9,7 @@ public class ColourChanges : MonoBehaviour
     Color[] colour = new Color[3];
     int index;
 
+
     public static ColourChanges Instance = null;
 
     public void Awake()
@@ -25,10 +26,9 @@ public class ColourChanges : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
         // storing colours into an array
-        
 
 
 
@@ -42,10 +42,10 @@ public class ColourChanges : MonoBehaviour
         // set colour to array index position
         lightcolour.GetComponent<Renderer>().material.color = colour[index];
 
-   
 
 
-        if (colour[index] == colour[0])
+
+        /*if (colour[index] == colour[0])
         {
             StartCoroutine(GreenColour());
         }
@@ -60,7 +60,7 @@ public class ColourChanges : MonoBehaviour
 
             StartCoroutine(YellowColour());
 
-        }
+        }*/
 
         /*
          Testing changing colours on start
@@ -86,7 +86,7 @@ public class ColourChanges : MonoBehaviour
     void Update()
     {
 
-        if (colour[index] == colour[0])
+        /*if (colour[index] == colour[0])
         {
             StartCoroutine(GreenColour());
         }
@@ -101,7 +101,7 @@ public class ColourChanges : MonoBehaviour
 
             StartCoroutine(YellowColour());
 
-        }
+        }*/
 
 
     }
