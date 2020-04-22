@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2358380629577849100}
   - component: {fileID: 5317422571782128456}
   - component: {fileID: 201972382341421987}
-  - component: {fileID: -3511558636938332637}
+  - component: {fileID: 2380796442937256182}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: trafficlight
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e9770a691d7778d4c996f700913fb7ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &-3511558636938332637
+--- !u!114 &2380796442937256182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

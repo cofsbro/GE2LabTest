@@ -7,6 +7,19 @@ public class ColourChanges : MonoBehaviour
 
     public GameObject lightcolour;
     Color[] colour = new Color[3];
+    int index;
+
+    public static ColourChanges Instance = null;
+
+    public void Awake()
+    {
+        Instance = this;
+
+        colour[0] = Color.red;
+        colour[1] = Color.yellow;
+        colour[2] = Color.green;
+    }
+
 
 
     // Start is called before the first frame update
@@ -15,18 +28,21 @@ public class ColourChanges : MonoBehaviour
         
 
         // storing colours into an array
-        colour[0] = Color.red;
-        colour[1] = Color.yellow;
-        colour[2] = Color.green;
-
         
-      
+
+
+
+       
+
 
         // get random position within array
-        int index = Random.Range(0, colour.Length);
+        index = Random.Range(0, colour.Length);
+
 
         // set colour to array index position
         lightcolour.GetComponent<Renderer>().material.color = colour[index];
+
+   
 
 
         if (colour[index] == colour[0])
@@ -69,11 +85,27 @@ public class ColourChanges : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       
+
+        if (colour[index] == colour[0])
+        {
+            StartCoroutine(GreenColour());
+        }
+
+        else if (colour[index] == colour[1])
+        {
+            StartCoroutine(RedColour());
+        }
+
+        else
+        {
+
+            StartCoroutine(YellowColour());
+
+        }
+
 
     }
-
+    //Set delay to change colour
     public IEnumerator GreenColour()
     {
         float geenchange = Random.Range(4, 11);
