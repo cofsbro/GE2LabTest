@@ -5,8 +5,17 @@ using UnityEngine;
 public class CircleOfObjects : MonoBehaviour
 {
     public GameObject trafficlight,point;
-    float x;
-    float z;
+
+    Color[] colour = new Color[3];
+    int index;
+
+    int loc = 0;
+
+    bool check = false;
+
+
+    public Color[] store_col = new Color[10];
+
 
     //store the cyclinder traffic lights positions within an array
     public Vector3[] array = new Vector3[10];
@@ -17,10 +26,31 @@ public class CircleOfObjects : MonoBehaviour
     {
         this.lightPos();
 
+        // seeing that now both a colour is linked with a location this loop
+        //will hopefully cycle through the ring and set the travel point to the first
+        // green light it lands on
+        // getting an infinate loop error
+        /*while (check == false)
+        {
+            if(store_col[loc] == Color.green)
+            {
+                point.transform.position = array[loc];
 
+                check = false;
+            }
+
+            else
+            {
+                loc++;
+            }
+
+        } */
+
+        
         // randomly choose point stored and set it to a random light
         int p = Random.Range(0, array.Length);
         point.transform.position = array[p];
+        
 
 
     }
@@ -33,7 +63,11 @@ public class CircleOfObjects : MonoBehaviour
         //keeping the center points
         Vector3 origin = new Vector3(0, 0, 0);
 
-        
+        colour[0] = Color.red;
+        colour[1] = Color.yellow;
+        colour[2] = Color.green;
+
+
 
         for (int i = 0; i < 10; i++)
         {
@@ -44,8 +78,16 @@ public class CircleOfObjects : MonoBehaviour
 
             // Setting the points on the circle to spawn light
             float radius = i * (2 * Mathf.PI / 10);
-            x = Mathf.Sin(radius) * 20f;
-            z = Mathf.Cos(radius) * 20f;
+            float x = Mathf.Sin(radius) * 20f;
+            float z = Mathf.Cos(radius) * 20f;
+
+            index = Random.Range(0, colour.Length);
+
+
+            // set colour to array index position
+            instance.GetComponent<Renderer>().material.color = colour[index];
+
+            store_col[i] = colour[index];
 
 
 

@@ -9,6 +9,11 @@ public class ColourChanges : MonoBehaviour
     Color[] colour = new Color[3];
     int index;
 
+    
+
+    //Connect scripts
+    private Travel moving;
+
 
     public static ColourChanges Instance = null;
 
@@ -16,6 +21,7 @@ public class ColourChanges : MonoBehaviour
     {
         Instance = this;
 
+        // storing colours into an array
         colour[0] = Color.red;
         colour[1] = Color.yellow;
         colour[2] = Color.green;
@@ -27,30 +33,14 @@ public class ColourChanges : MonoBehaviour
     void Start()
     {
 
+        StartCoroutine(delay());
 
-        // storing colours into an array
-
-
-
-       
-
-
-        // get random position within array
-        index = Random.Range(0, colour.Length);
-
-
-        // set colour to array index position
-        lightcolour.GetComponent<Renderer>().material.color = colour[index];
-
-
-
-
-        /*if (colour[index] == colour[0])
+        /*if (lightcolour.GetComponent<Renderer>().material.color == colour[0])
         {
             StartCoroutine(GreenColour());
         }
 
-        else if (colour[index] == colour[1])
+        else if (lightcolour.GetComponent<Renderer>().material.color == colour[1])
         {
             StartCoroutine(RedColour());
         }
@@ -61,6 +51,25 @@ public class ColourChanges : MonoBehaviour
             StartCoroutine(YellowColour());
 
         }*/
+
+
+    }
+
+
+
+
+
+   
+
+
+
+        // get random position within array
+        //index = Random.Range(0, colour.Length);
+
+
+        // set colour to array index position
+        //lightcolour.GetComponent<Renderer>().material.color = colour[index];
+
 
         /*
          Testing changing colours on start
@@ -80,11 +89,32 @@ public class ColourChanges : MonoBehaviour
             trafficlight.GetComponent<Renderer>().material.color = Color.green;
         }*/
 
-    }
+    
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
+        /*if (lightcolour.GetComponent<Renderer>().material.color == colour[0])
+        {
+            StartCoroutine(GreenColour());
+        }
+
+        else if (lightcolour.GetComponent<Renderer>().material.color == colour[1])
+        {
+            StartCoroutine(RedColour());
+        }
+
+        else
+        {
+
+            StartCoroutine(YellowColour());
+
+        }*/
+
+
+
+
 
         /*if (colour[index] == colour[0])
         {
@@ -105,6 +135,50 @@ public class ColourChanges : MonoBehaviour
 
 
     }
+
+    public IEnumerator delay()
+    {
+        while(true)
+        {
+
+        
+
+        if (lightcolour.GetComponent<Renderer>().material.color == colour[0])
+        {
+            float geenchange = Random.Range(4, 11);
+            yield return new WaitForSeconds(geenchange);
+
+                //moving.transform.position = lightcolour.transform.position;
+
+                lightcolour.GetComponent<Renderer>().material.color = colour[1];
+        }
+
+        else if (lightcolour.GetComponent<Renderer>().material.color == colour[1])
+        {
+            float redchange = Random.Range(4, 11);
+            yield return new WaitForSeconds(redchange);
+
+
+            lightcolour.GetComponent<Renderer>().material.color = colour[2];
+        }
+
+        else
+        {
+
+            yield return new WaitForSeconds(4f);
+
+
+
+
+            lightcolour.GetComponent<Renderer>().material.color = colour[0];
+
+        }
+
+        }
+
+    }
+
+    /*
     //Set delay to change colour
     public IEnumerator GreenColour()
     {
@@ -136,5 +210,6 @@ public class ColourChanges : MonoBehaviour
         lightcolour.GetComponent<Renderer>().material.color = colour[2];
 
     }
+    */
 
 }

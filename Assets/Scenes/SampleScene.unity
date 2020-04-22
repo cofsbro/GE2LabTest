@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 1754419416}
   - component: {fileID: 1754419415}
   - component: {fileID: 1754419419}
+  - component: {fileID: 1754419420}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -538,3 +539,29 @@ MonoBehaviour:
   pursueEnabled: 1
   pursueTargetPos: {x: 0, y: 0, z: 0}
   damping: 0.1
+--- !u!114 &1754419420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754419414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e012474cf11ba684ab307155f8194a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trafficlight: {fileID: 134402581442826244, guid: 7df4352dd62f4d94396d7f2bf6bd96ba,
+    type: 3}
+  point: {fileID: 319984423}
+  array:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
